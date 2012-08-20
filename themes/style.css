@@ -104,6 +104,12 @@ body{
 background:  url('/images/bg.png') no-repeat;
 }
 
+
+input[type="search"] {
+-webkit-appearance: textfield;
+}
+
+
 #wrapper {
 	width: 1000px;
 	margin: 0 auto;

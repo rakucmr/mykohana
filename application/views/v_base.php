@@ -32,12 +32,13 @@
 		</div>
 	</div><!-- #header-->
 	<?=$top_menu?>
+    <?=$slider_banner?>
 	<?=$manufactures;?>
 	<div id="middle">
 		<div id="container">
 			<div id="content">&nbsp;
 			<h2><?=$page_title?></h2>
-		<?=$slider_banner?>	
+
 			<?=$block_center?>
 			</div><!-- #content-->
 		</div><!-- #container-->
