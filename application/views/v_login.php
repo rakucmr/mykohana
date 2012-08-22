@@ -14,11 +14,11 @@ if(isset($reg_ok)) print $reg_ok;
 	<table  id="login">
 		<tr>
 			<td ><?=Form::label('username', 'Логин')?>:</td>
-			<td><?=Form::input('username', $data['username'], array('size' => 20))?></td>
+			<td><input name="username" placeholder="Логин" vlaue="<?=$data['username']?>" /></td>
 		</tr>
 		<tr>
 			<td ><?=Form::label('password', 'Пароль')?>:</td>
-			<td><?=Form::password('password', $data['password'], array('size' => 20))?></td>
+			<td><input name="password" type="password" placeholder="Пароль" value="<?=$data['password']?>"  /></td>
 		</tr>
 		<tr>
 			<td></td>
@@ -26,7 +26,7 @@ if(isset($reg_ok)) print $reg_ok;
 		</tr>
 
 		<tr>
-			<td align="center"><?=Form::submit('submit', 'Войти')?></td>
+			<td align="center"><?=Form::submit('submit', 'Войти')?> <a href="/passwordforgot">Забыли пароль?</a></td>
 			<td><?=Html::anchor('register', 'Регистрация')?></td>
 		</tr>
 	</table>

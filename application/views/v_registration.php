@@ -35,7 +35,7 @@ if($errors){
   </tr>
   <tr>
     <td>Email:: <span class="required">*</span></td>
-    <td><input type="email" name="email" value="<?=$data['email']?>" /> <span id="emailInfo">Valid E-mail please, you will need it to log in!</span></td>
+    <td><input type="email" name="email"  value="<?=$data['email']?>" /> <span id="emailInfo">Valid E-mail please, you will need it to log in!</span></td>
   </tr>
   <tr>
     <td>Номер телефона: <span class="required">*</span></td>
