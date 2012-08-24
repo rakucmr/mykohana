@@ -9,6 +9,7 @@ class Controller_Passwordforgot extends Controller_Index{
         }
 	}
 
+<<<<<<< HEAD
 /*
 public function hash($str)
 {
@@ -26,10 +27,13 @@ static public function hash_password($password)
 */
 
 
+=======
+>>>>>>> 2daf8cfe16ed6bdf9967f33a3c5e8f279f2dcf94
 
 	public function action_index(){
 
     if(isset($_POST['submit'])){
+<<<<<<< HEAD
     $email = Arr::get($_POST,'email');
 
    $newpass = 'sdfddsfsfsd';
@@ -42,6 +46,10 @@ static public function hash_password($password)
 
     $email = Email::factory('Регистрация на сайте','Регистрация на сайте успешно завешена')
                     ->to($email['email'],"ваш новый пароль")
+=======
+    $email = Email::factory('Регистрация на сайте','Регистрация на сайте успешно завешена')
+                    ->to($data['email'],"ваш новый пароль $newpass")
+>>>>>>> 2daf8cfe16ed6bdf9967f33a3c5e8f279f2dcf94
                     ->from('admin@mykohana.loc','mykohan')
                     ->send();
 
