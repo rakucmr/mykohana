@@ -29,7 +29,7 @@ class Controller_Index extends Controller_Base {
 		$userarea = View::factory('v_nologin');
 		}
 
-		//Получаем категории можно вызвать в блоках
+    	//Получаем категории можно вызвать в блоках
 		$categories = ORM::factory('category');
 		$categories = $categories->fulltree()->as_array();
 		$left_categories = View::factory('v_categories')->bind('categories', $categories);
@@ -65,20 +65,28 @@ class Controller_Index extends Controller_Base {
         //// конец корзыны
 
 
+
+    $products = ORM::factory("product")->limit(10)->find_all()->as_array();
+     $products = View::factory('v_lastproducts', array('products'=>$products));
+   	 $this->template->block_center = array('products'=>$products);
+
+
+
         //Подключение блоков
 		$this->template->userarea=$userarea;
 		$this->template->search_form = View::factory('v_searchform');
-		$this->template->block_center = View::factory('v_index');
-		$this->template->block_left = array('left_categories'=>$left_categories);
+	   //	$this->template->block_center = View::factory('v_index');
+    	$this->template->block_left = array('left_categories'=>$left_categories);
 		$this->template->block_right = array('minicart'=>$minicart, 'manufactures'=>$manufactures);
-	
+
 	}
 
 	public function action_index()
 	{
 	$banners = ORM::factory('banner')->find_all();
 	$this->template->slider_banner = View::factory('v_banner', array('banners'=>$banners));
-	}
+
+   }
 
 } // End 
 

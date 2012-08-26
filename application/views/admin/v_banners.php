@@ -1,9 +1,8 @@
 <br/>
 
 <p align="right">
-<?=HTML::image('media/img/add.png', array('valign' => 'top'))?>
-
-<a href="/<?=Request::current()->directory()?>/banners/add">Добавить</a>
+<img src="/themes/images/add.png" alt="Довавить" />
+<a href="banners/add">Добавить</a>
 </p>
 <table width="100%"   class="border">
     <thead>
@@ -13,13 +12,12 @@
     </thead>
 <? foreach ($banners as  $b):?>
 <tr>
-    <td><?=HTML::anchor('admin/banners/edit/'. $b->banner_id, $b->banner_title)?></td>
+    <td><a href="banners/edit/<?=$b->banner_id?>"><?=$b->banner_title?></a></td>
 	<td><?=$b->banner_url?></td>
 	<td><?=$b->banner_image?></td>
     <td width="100" align="center">
-    <?=HTML::anchor('admin/banners/edit/'. $b->banner_id, HTML::image('media/img/edit.png'))?>
-
-    <?=HTML::anchor('admin/banners/delete/'. $b->banner_id, HTML::image('media/img/delete.png'))?>
+    <a href="banners/edit/<?=$b->banner_id?>"><img src="/themes/images/edit.png " alt="Редактировать" /></a>
+    <a href="banners/delete/<?=$b->banner_id?>"><img src="/themes/images/delete.png " alt="Удалить" /></a>
 
     </td>
 </tr>

@@ -33,7 +33,8 @@ class Controller_Products extends Controller_Index {
 
 
 		$this->template->page_title = 'Продукты';
-		$this->template->block_center = View::factory('v_products',array('products'=>$products,'pagination'=>$pagination));
+        $products = View::factory('v_products',array('products'=>$products,'pagination'=>$pagination));
+		$this->template->block_center = array('products'=>$products);
 	}
 	
 
@@ -47,8 +48,8 @@ class Controller_Products extends Controller_Index {
 		
 		$images = $product->images->find_all();
 		
-		$content = View::factory('v_product')->bind('product',$product)->bind('images',$images);
-		$this->template->block_center = $content;
+		$viewproduct = View::factory('v_product')->bind('product',$product)->bind('images',$images);
+		$this->template->block_center = array('viewproduct'=>$viewproduct);
 		
 	}
 	

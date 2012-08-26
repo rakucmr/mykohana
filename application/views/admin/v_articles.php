@@ -1,7 +1,6 @@
 <p align="right">
-<?=HTML::image('media/img/add.png', array('valign' => 'top'))?>
-
-<a href="/<?=Request::current()->directory()?>/articles/add">Добавить</a>
+<img src="/themes/images/add.png" alt="добавиь" />
+<a href="articles/add">Добавить</a>
 </p>
 <table width="100%"   class="border">
     <thead>
@@ -11,13 +10,11 @@
     </thead>
 <? foreach ($articles as  $article):?>
 <tr>
-    <td><?=HTML::anchor('admin/pages/edit/'. $article->article_id, $article->article_title)?></td>
+    <td><a href="articles/edit/<?=$article->article_id?>"><?=$article->article_title?></a></td>
 	<td><?=$article->article_alias ?></td>
     <td width="100" align="center">
-    <?=HTML::anchor('admin/articles/edit/'. $article->article_id, HTML::image('media/img/edit.png'))?>
-
-    <?=HTML::anchor('admin/articles/delete/'. $article->article_id, HTML::image('media/img/delete.png'))?>
-
+    <a href="articles/edit/<?=$article->article_id?>"><img src="/themes/images/edit.png" alt="Редактировать" /></a>
+    <a href="articles/delete/<?=$article->article_id?>"><img src="/themes/images/delete.png" alt="Удалитб" /></a>
     </td>
 </tr>
 <? endforeach?>

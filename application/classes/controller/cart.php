@@ -24,12 +24,12 @@ class Controller_Cart extends Controller_Index {
 		else{
 		$carts = null;
 		}
-		$block_center = View::factory('v_shoppingcart', array(
+		$showcart = View::factory('v_shoppingcart', array(
             'carts' => $carts, 'p_session'=>$this->p_session
         ));
 
 	$this->template->page_title = 'Корзина';
-	$this->template->block_center = $block_center;
+	$this->template->block_center = array('showcart'=>$showcart);
 
   }
 

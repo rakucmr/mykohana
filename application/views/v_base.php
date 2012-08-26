@@ -38,8 +38,11 @@
 		<div id="container">
 			<div id="content">&nbsp;
 			<h2><?=$page_title?></h2>
-
-			<?=$block_center?>
+             <?
+          foreach($block_center as $bcenter){
+          print $bcenter;
+           }
+            ?>
 			</div><!-- #content-->
 		</div><!-- #container-->
 
@@ -53,6 +56,7 @@
 
 		<div class="sidebar" id="sideRight">
         <?
+
 		foreach($block_right as $rblock){
 			print $rblock;
 		}

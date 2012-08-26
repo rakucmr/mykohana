@@ -8,7 +8,7 @@ class Controller_Base extends Controller_Template{
 	protected $cache;
 	protected $session;
   //  protected $captcha;
-	
+
 	public function before()
 	{
 		parent::before();
@@ -42,7 +42,7 @@ class Controller_Base extends Controller_Template{
 		$this->template->left_categories = null;
 		$this->template->slider_banner = null;
 		$this->template->block_left = array();
-		$this->template->block_center = null;
+		$this->template->block_center = array();
 		$this->template->block_right = array();
 		$this->template->block_footer = null;
 

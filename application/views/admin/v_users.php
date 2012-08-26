@@ -1,8 +1,7 @@
 <br/>
 <p align="right">
-<?=HTML::image('media/img/add.png', array('valign' => 'top'))?>
-
-<?=HTML::anchor(Request::current()->directory().'/users/add', 'Добавить')?>
+<img src="/themes/images/add.png" alt="Добавить" />
+<a href="users/add">Добавить</a>
 </p>
 
 <table class="border">
@@ -22,8 +21,8 @@ $i++;
         }
 	print	'</td>
 		<td>'.$user->status.'</td>
-		<td>'.HTML::anchor('admin/users/edit/'.$user->id, HTML::image('media/img/edit.png')).
-    HTML::anchor(Request::current()->directory().'/users/delete/'.$user->id, HTML::image('media/img/delete.png')).'</td>
+		<td>'.HTML::anchor('admin/users/edit/'.$user->id, HTML::image('themes/images/edit.png')).
+    HTML::anchor(Request::current()->directory().'/users/delete/'.$user->id, HTML::image('themes/images/delete.png')).'</td>
 	</tr>';
 }
 ?>

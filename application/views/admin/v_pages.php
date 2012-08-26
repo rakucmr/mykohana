@@ -1,9 +1,8 @@
 <br/>
 
 <p align="right">
-<?=HTML::image('media/img/add.png', array('valign' => 'top'))?>
-
-<a href="/<?=Request::current()->directory()?>/pages/add">Добавить</a>
+<img src="/themes/images/add.png" alt="Добавить" />
+<a href="pages/add">Добавить</a>
 </p>
 <table width="100%"   class="border">
     <thead>
@@ -16,10 +15,8 @@
     <td><?=HTML::anchor('admin/pages/edit/'. $page->page_id, $page->page_title)?></td>
 	<td><?=$page->page_alias ?></td>
     <td width="100" align="center">
-    <?=HTML::anchor('admin/pages/edit/'. $page->page_id, HTML::image('media/img/edit.png'))?>
-
-    <?=HTML::anchor('admin/pages/delete/'. $page->page_id, HTML::image('media/img/delete.png'))?>
-
+    <a href="pages/edit/<?=$page->page_id?>"><img src="/themes/images/edit.png" alt="Редактировать" /></a>
+    <a href="pages/delete/<?=$page->page_id?>"><img src="/themes/images/delete.png" alt="Удалить" /></a>
     </td>
 </tr>
 <? endforeach?>

@@ -1,4 +1,1 @@
-mykohana
-========
-
-my kohana shop
+CMS Интернет Магазин на Kohana FrameWork

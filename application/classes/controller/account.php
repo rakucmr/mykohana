@@ -11,11 +11,11 @@ class Controller_Account extends Controller_Index {
 }
     public function action_index() {
  	
-        $content = View::factory('v_account');
+        $account = View::factory('v_account');
         // Выводим в шаблон
         $this->template->title = 'Личный кабинет';
         $this->template->page_title = 'Личный кабинет';
-        $this->template->block_center = $content;
+        $this->template->block_center = array('account'=>$account);
     }
 
 	public function action_myprofile(){
@@ -35,21 +35,21 @@ class Controller_Account extends Controller_Index {
 	}
 	
 		// Выводим в шаблон
-		$content = View::factory('v_myprofile')->bind('user', $this->user)->bind('errors', $errors);
+		$profile = View::factory('v_myprofile')->bind('user', $this->user)->bind('errors', $errors);
 
         $this->template->title = 'Личный кабинет - Персональная информация';
         $this->template->page_title = 'Посмотреть или изменить персональные данные';
-        $this->template->block_center = $content;
+        $this->template->block_center = array('profile'=>$profile);
 		
 	}
 
 	
 	public function action_changepassword(){
-	    $content = View::factory('v_change_password');
+	    $chpassword = View::factory('v_change_password');
         // Выводим в шаблон
         $this->template->title = 'Личный кабинет - ';
         $this->template->page_title = 'Изменение пароля';
-        $this->template->block_center = $content;
+        $this->template->block_center = array('chpassword'=>$chpassword);
 	}
 	
 }

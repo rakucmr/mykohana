@@ -1,6 +1,6 @@
 <br/>
 <p align="right">
-<?=HTML::image('media/img/add.png', array('valign' => 'top'))?>
+<?=HTML::image('themes/images/add.png', array('valign' => 'top'))?>
 <a href="/<?=Request::current()->directory()?>/manufactures/add">Добавить</a>
 </p>
 
@@ -9,9 +9,9 @@
 <?
 foreach($data as $d){
 
-print '<tr><td>'.$d->title.'</td><td>'.$d->url.'</td><td>'.$d->alias.'</td><td><a href="/media/uploads/'.$d->image.'"><img width="100" src="/media/uploads/'.$d->image.'"></a></td><td>'.HTML::anchor('admin/manufactures/edit/'. $d->id, HTML::image('media/img/edit.png')).
+print '<tr><td>'.$d->title.'</td><td>'.$d->url.'</td><td>'.$d->alias.'</td><td><a href="/media/manufactures/'.$d->image.'"><img width="100" src="/media/manufactures/'.$d->image.'"></a></td><td>'.HTML::anchor('admin/manufactures/edit/'. $d->id, HTML::image('themes/images/edit.png')).
 
-    HTML::anchor('admin/manufactures/delete/'. $d->id, HTML::image('media/img/delete.png'))
+    HTML::anchor('admin/manufactures/delete/'. $d->id, HTML::image('themes/images/delete.png'))
 .'</td></tr>';
 }
 

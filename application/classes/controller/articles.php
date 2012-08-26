@@ -16,9 +16,9 @@ class Controller_Articles extends Controller_Index{
        // Получаем статию
 	   $id = (int)$this->request->param('id');
 	   $articles = ORM::factory('article', $id)->as_array();
-       $content = View::factory('v_article',array('articles' => $articles));
+       $article = View::factory('v_article',array('articles' => $articles));
 	   $this->template->page_title = '';
-	   $this->template->block_center = $content;
+	   $this->template->block_center = array('article'=>$article);
 
 	}
 
@@ -40,9 +40,9 @@ class Controller_Articles extends Controller_Index{
                 ->limit($pagination->items_per_page)
   				->offset($pagination->offset)
                 ->find_all();
-    $content = View::factory('v_articles',array('articles' => $articles, 'pagination'=>$pagination));
+    $article = View::factory('v_articles',array('articles' => $articles, 'pagination'=>$pagination));
     $this->template->page_title = 'Статии';
-    $this->template->block_center = $content;
+    $this->template->block_center = array('article'=>$article);
 	}
 
 

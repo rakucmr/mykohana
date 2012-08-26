@@ -15,7 +15,7 @@ class Controller_Manufactures extends Controller_Index{
 			$manufactures = ORM::factory('manufactures')->find_all();
 			$content = View::factory('v_manufactures',array('manufactures' => $manufactures));
 			$this->template->page_title = 'Производительи';
-			$this->template->block_center = $content;
+			$this->template->block_center = array('manufacture'=>$manufacture);
 	}	
 
 	public function action_manufacture(){
@@ -24,7 +24,7 @@ class Controller_Manufactures extends Controller_Index{
 			$manufacture = $manufactures->as_array();
 			$content = View::factory('v_manufacture',array('manufacture' => $manufacture));
 			$this->template->page_title = 'Производитель';
-			$this->template->block_center = $content;
+			$this->template->block_center = array('manufacture'=>$manufacture);
 	}
 	
 }
