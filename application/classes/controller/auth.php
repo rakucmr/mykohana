@@ -31,7 +31,7 @@ class Controller_Auth extends Controller_Index{
 	
 	
 	
-        $content = View::factory('v_login')
+        $login = View::factory('v_login')
                     ->bind('errors', $errors)
 					->bind('reg_ok', $this->reg_ok)
                     ->bind('data', $data);
@@ -39,7 +39,7 @@ class Controller_Auth extends Controller_Index{
 	       // Выводим в шаблон
         $this->template->title = 'Авторизация';
         $this->template->page_title = 'Вход в личный кабинет';
-        $this->template->block_center = $content;			
+        $this->template->block_center = array('login'=>$login);
 	}
 	
 	
@@ -98,7 +98,7 @@ class Controller_Auth extends Controller_Index{
 
 		$country = ORM::factory('country')->find_all();
 		$zones = ORM::factory('zone')->where('country_id', '=', 176)->find_all();
-        $content = View::factory('v_registration',array('country'=>$country, 'zones'=>$zones))
+        $form_register = View::factory('v_registration',array('country'=>$country, 'zones'=>$zones))
                             ->bind('errors', $errors)
                             ->bind('data', $data)
                             ->bind('captcha_image', $captcha_image);
@@ -106,7 +106,7 @@ class Controller_Auth extends Controller_Index{
         // Выводим в шаблон
         $this->template->title = 'Регистрация';
         $this->template->page_title = 'Регистрация новога пользователя';
-        $this->template->block_center = $content;
+        $this->template->block_center = array('form_register'=>$form_register);
     }
     
 	

@@ -11,20 +11,28 @@ class Controller_Order extends Controller_Index{
 
 
 	public function action_index(){
+        if(empty($this->payment))
+    {
+     $this->request->redirect();
+    }
 		$orders = Model::factory('order')->delivery_methods();
-		$block_center = View::factory('v_checkout', array('orders' => $orders,));
-		
+		$checkout = View::factory('v_checkout', array('orders' => $orders,));
+
 		$this->template->page_title = 'Способы доставки';
-		$this->template->block_center = $block_center;		
+		$this->template->block_center = array('checkout'=>$checkout);
 	}
 	
 	public function action_payment(){
+        if(empty($this->payment))
+    {
+     $this->request->redirect();
+    }
 		$payments = Model::factory('order')->payment_methods();
-		$block_center = View::factory('v_payments', array('payments' => $payments,));
+		$checkout= View::factory('v_payments', array('payments' => $payments,));
 		
 		$this->template->title = 'Способы оплаты';
 		$this->template->page_title = 'Способы оплаты';
-		$this->template->block_center = $block_center;	
+		$this->template->block_center = array('checkout'=>$checkout) ;
 	}
 	
 	

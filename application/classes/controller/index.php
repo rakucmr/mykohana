@@ -3,11 +3,13 @@
 class Controller_Index extends Controller_Base {
 
     public $p_session;
+    public $payment;
 
 	public function before(){
 	    parent::before();
         $this->p_session = $this->session->get('products');
-		
+
+
 				//Вывод в шаблон
 		$this->template->title = 'Интернет-магазин';
 		$this->template->site_name = 'IT Books';
@@ -51,6 +53,7 @@ class Controller_Index extends Controller_Base {
 			$carts->or_where('id', 'IN', array($id));
 			}
 			$carts = $carts->find_all();
+            $this->payment = $carts;
 
 		}
 		else{

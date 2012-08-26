@@ -26,6 +26,6 @@ foreach($carts as $cart){
 
 <br><br>
 <table width="100%">
-<tr><td><a href="/"><img src="images/button_continue.gif" alt="Продолжить покупки"></a></td><td><input style="width:104px; height:29px; border:0px; cursor: pointer; background: url('/images/button_update_cart.gif') no-repeat" type="submit" name=" " value=" " /></td><td><a href="/order"><img src="/images/button_checkout.gif"></a></td></tr>
+<tr><td><a href="/"><img src="/themes/images/button_continue.gif" alt="Продолжить покупки"></a></td><td><input style="width:104px; height:29px; border:0px; cursor: pointer; background: url('/themes/images/button_update_cart.gif') no-repeat" type="submit" name=" " value=" " /></td><td><a href="/order"><img src="/themes/images/button_checkout.gif"></a></td></tr>
 </table>
 </form>

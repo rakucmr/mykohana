@@ -10,7 +10,7 @@
 	<li><a href="/admin/pages">Страницы</a></li>
     <li><a href="/admin/articles">Статии</a></li>
 	<li>
-	<a href="/admin/modules">Модульи</a>
+	<a href="#">Модульи</a>
 		<ul>
 			<li><a href="/admin/modules/delivery">Доставка</a></li>
 			<li><a href="/admin/modules/payments">Оплата</a></li>

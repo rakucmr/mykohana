@@ -14,15 +14,15 @@ if($errors){
 <table align="center"  width="100%" cellspacing="1" class="border">
   <tr>
     <td>Логин: <span class="required">*</span></td>
-    <td><input id="username" name="username" value="<?=$data['username']?>" /> <span id="nameInfo">What's your name?</span></td>
+    <td><input id="username" name="username" placeholder="Логин" value="<?=$data['username']?>" /> <span id="nameInfo"></span></td>
   </tr>
   <tr>
     <td>Пароль: <span class="required">*</span></td>
-    <td><input type="password" id="password" name="password" value="<?=$data['password']?>" /> <span id="pass1Info">At least 5 characters: letters, numbers and '_'</span></td>
+    <td><input type="password" id="password" placeholder="Пароль" name="password" value="<?=$data['password']?>" /> <span id="pass1Info"></span></td>
   </tr>
   <tr>
     <td>Повтарите пароль : <span class="required">*</span></td>
-    <td><input name="password_confirm" type="password" value="<?=$data['password_confirm']?>" /> <span id="pass2Info">Confirm password</span></td>
+    <td><input type="password" name="password_confirm" placeholder="Повторите пароль" value="<?=$data['password_confirm']?>" /> <span id="pass2Info"></span></td>
   </tr>
  <tr>
      <td>Компания:</td>
@@ -31,20 +31,20 @@ if($errors){
 
   <tr>
     <td>ИФО: <span class="required">*</span></td>
-    <td><input name="first_name" value=" <?=$data['first_name']?>" /></td>
+    <td><input name="first_name" placeholder="Ваш ИФО" value=" <?=$data['first_name']?>" /></td>
   </tr>
   <tr>
     <td>Email:: <span class="required">*</span></td>
-    <td><input type="email" name="email"  value="<?=$data['email']?>" /> <span id="emailInfo">Valid E-mail please, you will need it to log in!</span></td>
+    <td><input type="email" name="email" placeholder="Ваш email" value="<?=$data['email']?>" /> <span id="emailInfo"></span></td>
   </tr>
   <tr>
     <td>Номер телефона: <span class="required">*</span></td>
-    <td><input name="phone" value="<?=$data['phone']?>" /></td>
+    <td><input name="phone" placeholder="Номер телефона" value="<?=$data['phone']?>" /></td>
   </tr>
   <tr>
     <td><span class="required">*</span> Адрес:</td>
 
-    <td><input type="text" name="address" value="<?=$data['address']?>" /></td>
+    <td><input type="text" name="address" placeholder="Ваш реальный адрес" value="<?=$data['address']?>" /></td>
   </tr>
   <tr>
     <td><span class="required">*</span> Страна:</td>

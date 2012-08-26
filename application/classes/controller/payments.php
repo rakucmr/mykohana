@@ -8,27 +8,39 @@ class Controller_Payments extends Controller_Index{
 
 
 	public function action_index(){
+
+  
+
 		$payments = Model::factory('order')->payment_methods();
-		$block_center = View::factory('v_payments', array('payments' => $payments,));
-		
+		$payments = View::factory('v_payments', array('payments' => $payments,));
+
 		$this->template->title = 'Способы оплаты';
 		$this->template->page_title = 'Способы оплаты';
-		$this->template->block_center = $block_center;	
+		$this->template->block_center = array('payments'=>$payments);
 	}
 
 	public function action_pay(){
-		print $id = $this->request->param('id');
-		$pay = ORM::factory("payment",$id);//->where('payment_id', '=', $id)->find();
-		
-		$payment = $pay->as_array();
-		
-		//print_r($payment);
-		
-		$this->template->title = 'Способы оплаты';
-		$this->template->page_title = 'Способы оплаты';
-		
-		$content = View::factory('v_pay', array('payment'=>$payment));
-		$this->template->block_center = $content;
+
+    if(empty($this->payment))
+    {
+     $this->request->redirect();
+    }
+
+	   // print $id = $this->request->param('id');
+
+      if(!empty($_POST['pay_id'])) $id = $_POST['pay_id'];
+
+       if(@is_numeric($id))
+         {
+        $payment = ORM::factory("payment")->where('payment_id', '=', $id)->find();
+
+		$this->template->title = 'Способ оплаты';
+		$this->template->page_title = 'Оплата';
+
+		$pay = View::factory('v_pay', array('carts'=>$this->payment,  'p_session'=>$this->p_session, 'payment'=>$payment));
+		$this->template->block_center = array('pay'=>$pay);
+         }
+
 	}
 	
 
