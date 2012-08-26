@@ -1,9 +1,3 @@
-<br/>
-<p align="right">
-<img src="/themes/images/add.png" alt="" />
-<a href="countries/add">Добавить</a>
-</p>
-
 <table class="border">
 <?
 $i = 0;

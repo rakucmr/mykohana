@@ -3,27 +3,19 @@
 class Controller_Search extends Controller_Index {
 	
  public function action_index()
-	{	
+	{
 	$keyword = Arr::get($_GET, 'search_keyword');
 	$keyword = trim($keyword);
 	
 	
-		if(!empty($keyword ) and strlen($keyword)>3){
-			
-		$products = ORM::factory("product")->where('title', "like", "%$keyword%")->find_all();
+	   if(!empty($keyword )){
 
-
-            $this->template->block_center = View::factory('v_search_result', array('products'=>$products));
-
-            $noresult = 'нечего не найдена' ;
-            $this->template->block_center = View::factory('v_search_result', array('products'=>$products))
-                                            ->bind('noresult', $noresult);
-
+	   $products = ORM::factory("product")->where('title', "like", "%$keyword%")->find_all()->as_array();
+       $no = 'нечего не найдена';
+       $result = View::factory('v_search_result')->bind('products',$products)->bind('noresult',$no);
+       $this->template->block_center = array('result'=>$result);
 
   		}
-		else{
-			$this->template->block_center = '<br><br><p> <span class="error_msg"> Длина слов должна бвть больше 3 буквы </span> </p>';
-			}
-			
+
 	}
-} 
+}

@@ -7,7 +7,7 @@
             </div>
             <div id="product_price">
             <p>Производитель: <?=$product->manufactures->title?></p><p>Наличие: Есть в наличии</p>
-            <p><b>Цена <?=$product->price?> руб. </b></p><label>Количество:</label><input style="margin-bottom:20px;" type="count" size="2" value="1"><p><a href="/cart/add/<?=$product->id?>"><img src="/images/tocart.gif" alt="в корзину"></a></p>
+            <p><b>Цена <?=$product->price?> руб. </b></p><label>Количество:</label><input style="margin-bottom:20px;" type="count" size="2" value="1"><p><a href="/cart/add/<?=$product->id?>"><img src="/themes/images/tocart.gif" alt="в корзину"></a></p>
             </div>
             <div class="images_icon">
             <?foreach($images as $image):?>
