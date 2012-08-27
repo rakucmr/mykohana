@@ -19,15 +19,48 @@
 	});
 
 	</script>
-	</head>
+
+<script language="JavaScript" type="text/javascript">
+
+$(document).ready(function(){
+
+ $("#mylogin").click(function () {
+      $("#formlogin").toggle('normal').addClass("frms");
+
+   });
+
+});
+
+
+</script>
+
+<style type="text/css">
+.frm{
+display:none;
+width: 250px;
+}
+
+.frms{
+position:relative;
+left: 740px;
+top: 100px;
+width:260px; height:200px; border:1px solid #B3CDFF;
+z-index: 20;
+background: #DFEAFF;
+}
+
+</style>
+
+
+</head>
 
 <body>
-
 <div id="wrapper">
 
 	<div id="header">
 		<div>
-			<?=$userarea?>	
+			<?=$userarea?>
+
 			<?=$search_form?>
 		</div>
 	</div><!-- #header-->

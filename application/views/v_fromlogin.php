@@ -11,7 +11,7 @@
     </tr>
     <tr>
         <td></td>
-        <td "><input type="checkbox" name="remember" /> Запомнить<br/><br/></td>
+        <td><input type="checkbox" name="remember" /> Запомнить<br/><br/></td>
     </tr>
     <tr>
         <td align="center"><input type="submit" name="submit" value="Войти" /><a href=" ">Забыли пароль?</a></td>
