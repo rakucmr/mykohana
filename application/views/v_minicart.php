@@ -16,7 +16,20 @@ print '<a href="/cart"><img width="60" src="/themes/images/shopcart.png"></a>';
   }
 
 if(!empty($total_count)){
-				
+
+			 print '<p>Общая сумма '.$total_price.' руб.';
+			 print '<br>В корзине '.$total_count.' товара(ов)</p>';
+				}
+			  else print "<p>Ваша корзина пуста</p>";
+?>
+</div>
+
+<div style="width:190px;margin:5px; border:1px solid lightgray">
+<a href="">Ваша корзина</a>
+<?
+
+if(!empty($total_count)){
+
 			 print '<p>Общая сумма '.$total_price.' руб.';
 			 print '<br>В корзине '.$total_count.' товара(ов)</p>';
 				}
